@@ -29,7 +29,7 @@ class ShopController extends AbstractController
      * @Route("/shop")
      */
     public function show(){
-        retur $this->render('shop/show.html.twig')
+        return $this->render('shop/show.html.twig');
     }
 
 }
