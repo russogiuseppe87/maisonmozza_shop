@@ -12,7 +12,7 @@ class ProductsFixtures extends Fixture
     {
      
         for($i = 1; $i <= 10; $i++){
-            $products = new Product();
+            $products = new Products();
             $products->setTitle("Titre du produit n°$i")
                      ->setContent("<p>Description du produit N°$i</p>")
                      ->setImage("http://olacehold.it/350x150");
