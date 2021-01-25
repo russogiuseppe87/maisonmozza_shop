@@ -25,7 +25,7 @@ class ShopController extends AbstractController
     }
 
     /**
-     * @Route("/cart")
+     * @Route("/cart", name="shop_cart")
      */
     public function cart()
     {
@@ -39,4 +39,13 @@ class ShopController extends AbstractController
     {
         return $this->render('shop/order.html.twig');
     }
+
+    /**
+     * @Route("/product", name="shop_product")
+     */
+    public function product()
+    {
+        return $this->render('shop/product.html.twig');
+    }
+
 }
