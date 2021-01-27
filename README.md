@@ -1,7 +1,5 @@
 # maisonmozza_shop
 
-
-
-Projet Personnel
+Projet Personnel Symfony
 
 RUSSO Giuseppe

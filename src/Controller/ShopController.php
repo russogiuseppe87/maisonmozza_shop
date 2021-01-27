@@ -49,11 +49,17 @@ class ShopController extends AbstractController
     }
 
     /**
-     * @Route("/product", name="shop_product")
+     * @Route("/product/{id}", name="shop_product")
      */
-    public function product()
+    public function product($id)
     {
-        return $this->render('shop/product.html.twig');
+        $repo = $this->getDoctrine()->getRepository(Article::class);
+
+        $article = $repo->find($id);
+
+        return $this->render('shop/product.html.twig', [
+            'article' => $article
+        ]);
     }
 
 }
