@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Products;
+use App\Repository\ProductsRepository;
 
 class ShopController extends AbstractController
 {
@@ -20,10 +21,8 @@ class ShopController extends AbstractController
     /**
      * @Route("/shop")
      */
-    public function show()
+    public function show(ProductsRepository $repo)
     {
-        $repo = $this->getDoctrine()->getRepository(Products::class);
-
         $articles = $repo->findAll();
         
         return $this->render('shop/index.html.twig', [ 
@@ -51,12 +50,8 @@ class ShopController extends AbstractController
     /**
      * @Route("/product/{id}", name="shop_product")
      */
-    public function product($id)
+    public function product(Products $article)
     {
-        $repo = $this->getDoctrine()->getRepository(Products::class);
-
-        $article = $repo->find($id);
-
         return $this->render('shop/product.html.twig', [
             'article' => $article
         ]);
