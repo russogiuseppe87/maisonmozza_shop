@@ -53,7 +53,7 @@ class ShopController extends AbstractController
      */
     public function product($id)
     {
-        $repo = $this->getDoctrine()->getRepository(Article::class);
+        $repo = $this->getDoctrine()->getRepository(Products::class);
 
         $article = $repo->find($id);
 

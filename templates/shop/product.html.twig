@@ -4,8 +4,8 @@
 
 {% block body %}
 
-    <produits>
-        <h2>{{ article.title  }}</h2>
+    <section>
+        <h2>{{ article.title }}</h2>
         <div class="metadata">Description du produit</div>
             <img src="{{ article.image }}" alt="Text">
             {{ article.content | raw }}
@@ -13,6 +13,6 @@
             <hr>
 
         </div>
-    </produits>
+    </section>
 
 {% endblock %}
