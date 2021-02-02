@@ -16,7 +16,7 @@ class ProductsFixtures extends Fixture
             $products->setTitle("Titre du produit n°$i")
                      ->setContent("<p>Description du produit N°$i</p>")
                      ->setImage("http://placehold.it/350x350")
-                     ->setPrice("<h4>€10,00<h4>");
+                     ->setPrice("10.50");
 
             $manager->persist($products);
 
