@@ -14,6 +14,7 @@
             <div class="metadata"><h3>Description du produit</h3>
                 <img src="{{ article.image }}" alt="">
                 {{ article.content | raw }}
+                {{ article.price | raw }}
                 <a href="{{ path ('shop_product', {'id' : article.id}) }}" class="btn btn-primary">Voir le produit</a>
                 <hr>
             </div>

@@ -9,6 +9,7 @@
         <div class="metadata">Description du produit</div>
             <img src="{{ article.image }}" alt="Text">
             {{ article.content | raw }}
+            {{ article.price | raw }}
             <a href="{{ path ('shop_cart') }}" class="btn btn-primary">Ajouter au panier</a>
             <hr>
 
