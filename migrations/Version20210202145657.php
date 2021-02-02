@@ -22,10 +22,4 @@ final class Version20210202145657 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE products ADD price LONGTEXT DEFAULT NULL');
     }
-
-    public function down(Schema $schema) : void
-    {
-        // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE products DROP price');
-    }
 }

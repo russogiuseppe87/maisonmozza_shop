@@ -57,4 +57,12 @@ class ShopController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/contact")
+     */
+    public function contact()
+    {
+        return $this->render('shop/contact.html.twig');
+    }
+
 }
