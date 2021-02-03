@@ -1,3 +1,17 @@
 h1{
-    color: rebeccapurple;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: rgb(47, 128, 208);
+    font-weight: 500;
+}
+
+h2{
+    color: darkblue;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.btn{
+    font-weight: bold;
+    border-radius: 5%;
 }
