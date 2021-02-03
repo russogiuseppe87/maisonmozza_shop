@@ -2,12 +2,24 @@
 
 {% block title %}Contact{% endblock %}
 
+{% form_theme formContact 'bootstrap_4_layout.html.twig' %}
+
 {% block body %}
 
-<section class="Contact">
+    <section class="Contact">
 
-<h1>Contact</h1>
+        <h1>Contact</h1>
 
-</section>
+        {{ form_start(formContact) }}
+
+        {{ form_row(formContact.Nom, {'attr': {'placeholder': "Votre Nom"}}) }}
+        {{ form_row(formContact.email, {'attr': {'placeholder': "Votre Email"}}) }}
+        {{ form_row(formContact.Message, {'attr': {'placeholder': "Votre Message"}}) }}
+
+        <button type="submit" class="btn btn-success">Envoyer</button>
+
+        {{ form_end(formContact) }}
+
+    </section>
 
 {% endblock %}

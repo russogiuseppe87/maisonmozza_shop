@@ -5,6 +5,11 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 use App\Entity\Products;
 use App\Repository\ProductsRepository;
 
@@ -58,11 +63,22 @@ class ShopController extends AbstractController
     }
 
     /**
-     * @Route("/contact")
+     * @Route("/contact", name="shop_contact")
      */
     public function contact()
     {
-        return $this->render('shop/contact.html.twig');
+
+        $form = $this->createFormBuilder()
+                     ->add('Nom')
+                     ->add('email')
+                     ->add('Message', TextAreaType::class)
+                     ->getForm();
+
+        return $this->render('shop/contact.html.twig', [
+            'formContact' => $form->createView()
+        ]);
     }
+
+
 
 }
