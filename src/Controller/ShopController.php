@@ -41,8 +41,30 @@ class ShopController extends AbstractController
      */
     public function cart()
     {
-        return $this->render('shop/cart.html.twig');
+        return $this->render('shop/cart.html.twig', []);
     }
+
+
+    /**
+     * @Route("/cart/add/{id}", name="cart_add")
+     */
+    public function add($id, Request $request)
+    {
+        $session = $request->getSession();
+        
+        $panier = $session->get('panier', []);
+
+        if(!empty($panier[$id])) {
+            $panier[$id]++;
+        } else {
+            $panier[$id] =  1;
+        }
+
+        $session->set('panier', $panier);
+
+        dd($session->get('panier'));
+    }
+
 
     /**
      * @Route("/order")
