@@ -4,22 +4,18 @@
 
 {% block body %}
 
-<div class="col-4 mt-4">
-    <div class="border border rounded p-2 clearfix">
-        <h2>
-            {{ article.title }}
-            -
-            {{ article.price }}
-            €
-        </h2>
-        <div class="metadata">Description du produit</div>
+    <div class="card bg-secondary mb-3">
+        <div class="card-body">
+            <h2>{{ article.title }} - {{ article.price }} €</h2>
             <img class="img-fluid rounded" src="{{ article.image }}" alt="Image de {{ article.title }}">
-        <hr>
-             <a href="{{ path('cart_add', {'id': article.id}) }}" class="btn btn-success float-right">
-            <i class="fas fa-shopping-cart mr-1"></i>
-            Ajouter
+    
+            <hr>
+    
+            <a href="{{ path('cart_add', {'id': article.id}) }}" class="btn btn-success float-right">
+                <i class="fas fa-shopping-cart mr-1"></i>
+                Ajouter au panier
             </a>
+        </div>
     </div>
-</div>
 
 {% endblock %}

@@ -33,3 +33,13 @@ h2{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.logo_home{
+    max-width: 350px;
+    max-height: 350px;
+    display:block;
+    margin:0px auto;
+    text-align:center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
