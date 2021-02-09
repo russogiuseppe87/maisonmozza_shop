@@ -4,32 +4,30 @@
 
 {% block body %}
 
-<section class="articles">
+    <section class="articles">
 
-    <div class="bg-light p-3">
-        <h1>Les produits</h1>
-    </div>
+        <header class="bg-light p-3">
+            <h1>Les produits</h1>
+        </header>
 
-    {% for article in articles %}
-
-        <div class="card bg-secondary mb-3" style="max-width: 20rem;">
-        <div class="card-body">
-            <h2>
-            {{ article.title }}
-            -
-            {{ article.price }}
-            €
-            </h2>
-            <img class="img-fluid rounded" src="{{ article.image }}" alt="Image de {{ article.title }}">
-        <hr>
-        <a href="{{ path('cart_add', {'id': article.id}) }}" class="btn btn-success float-right">
-            <i class="fas fa-shopping-cart mr-1"></i>
-            Ajouter au panier
-        </a>
+        <div class="products">
+            {% for article in articles %}
+                <div class="card bg-secondary mb-3">
+                    <div class="card-body">
+                        <h2>{{ article.title }} - {{ article.price }} €</h2>
+                        <img class="img-fluid rounded" src="{{ article.image }}" alt="Image de {{ article.title }}">
+                
+                        <hr>
+                
+                        <a href="{{ path('cart_add', {'id': article.id}) }}" class="btn btn-success float-right">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Ajouter au panier
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-        
-    {% endfor %}
 
-</section>
+    </section>
 
 {% endblock %}

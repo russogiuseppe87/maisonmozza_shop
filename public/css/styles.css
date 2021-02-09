@@ -22,8 +22,14 @@ h2{
 
 .card{
     margin-top: 35px;
+    max-width: 20rem;
 }
 
 .bg-light{
     margin-bottom: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
