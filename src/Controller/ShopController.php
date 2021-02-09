@@ -90,10 +90,11 @@ class ShopController extends AbstractController
     /**
      * @Route("/panier/remove/{$id}", name="cart_remove")
      */
-    public function remove($id, SessionInterface $session) {
+    public function remove($id, SessionInterface $session) 
+    {
         $panier = $session->get('panier', []);
 
-        if(!empty($panier[$id])) {
+        if (!empty($panier[$id])) {
             unset($panier[$id]);
         }
 
@@ -110,6 +111,7 @@ class ShopController extends AbstractController
     {
         return $this->render('shop/order.html.twig');
     }
+
 
     /**
      * @Route("/product/{id}", name="shop_product")
